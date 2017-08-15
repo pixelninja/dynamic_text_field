@@ -177,7 +177,7 @@
 
 			// If there is actually $data, show that
 			if(!empty($data)) {
-				// If there's only one 'pair', we'll need to make them an array
+				// If there's only one 'field', we'll need to make them an array
 				// so the logic remains consistant
 				if(!is_array($data['value'])) {
 					$data = array(
@@ -214,8 +214,9 @@
 			}
 
 			// Return if it's allowed to be empty (and is empty)
-			if(isset($data[0]['value']) && General::strlen($data[0]['value']) == 0) return self::__OK__;
-
+			if ($this->get('required') == 'no') {
+				if(!isset($data[0]['value']) && General::strlen($data[0]['value']) == 0) return self::__OK__;
+			}
 
 			// Process Validation Rules
 			foreach($data as $string) {
