@@ -278,7 +278,7 @@
 			$field = new XMLElement($this->get('element_name'));
 
 			for($i = 0, $ii = count($data['handle']); $i < $ii; $i++) {
-				$value = new XMLElement('value');
+				$value = new XMLElement('item');
 				$value->setAttribute('handle', $data['handle'][$i]);
 				$value->setValue(
 					General::sanitize($data['value'][$i])
