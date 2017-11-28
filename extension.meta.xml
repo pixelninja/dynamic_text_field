@@ -13,6 +13,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="0.2" date="2017-11-29" min="2.7.x">
+			- Fix bug where entries with only 1 value would display the first letter only
+		</release>
 		<release version="0.1" date="2017-08-15" min="2.7.x">
 			- Initial Public Release
 		</release>

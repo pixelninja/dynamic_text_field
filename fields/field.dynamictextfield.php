@@ -277,6 +277,13 @@
 
 			$field = new XMLElement($this->get('element_name'));
 
+			if(!is_array($data['handle'])) {
+				$data = array(
+					'handle' => array($data['handle']),
+					'value' => array($data['value'])
+				);
+			}
+
 			for($i = 0, $ii = count($data['handle']); $i < $ii; $i++) {
 				$value = new XMLElement('item');
 				$value->setAttribute('handle', $data['handle'][$i]);
